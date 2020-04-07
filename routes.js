@@ -8,9 +8,9 @@ router.get('/podcasts', (req, res) =>{
 	})
 });
 
-router.get('/podcast/:ID', (req, res) =>{
+router.get('/podcast/:id', (req, res) =>{
 	res.send({
-		podcast: podcastJson[0]
+		podcast: podcastJson.filter(pod => pod.id == req.params.id)
 	})
 });
 
@@ -20,9 +20,9 @@ router.get('/episodes', (req, res) =>{
 	})
 });
 
-router.get('/episode/:ID', (req, res) =>{
+router.get('/episode/:id', (req, res) =>{
 	res.send({
-		episode: episodesJson[0]
+		episode: episodesJson.filter(ep => ep.id == req.params.id)
 	})
 });
 
